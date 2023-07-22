@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:c="http://www.w3.org/1999/XSL/Transform">
+<head>
+    <meta charset="UTF-8">
+    <title>Gamestudio</title>
+    <link rel="stylesheet" href="/css/stylesheet.css"/>
+<!--    <link rel="stylesheet" href="/css/table.css"/>-->
+    <meta name = "viewport" content="width=device-width, initial-scale=1">
+    <style>
+        p {
+            text-align: center;
+            font-size: 15px;
+            margin-top: 0px;
+        }
+
+    </style>
+    <style>
+        .up { grid-area: up; }
+        .left { grid-area: left; }
+        .right { grid-area: right; }
+        .down { grid-area: down; }
+
+        .grid-container {
+            display: grid;
+            grid-template-areas:
+    'up up up up up up'
+    'left left left right right right'
+    'down down down down down down';
+            gap: 5px;
+            padding: 5px;
+        }
+
+        .grid-container > div {
+            background-color: white;
+            text-align: center;
+            padding: 0.5em;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div th:replace ="fragments/fragments::return('maze')"/>
+<div th:replace="fragments/fragments::header"/>
+
+<span th:if="${@userController.logged}"></span>
+<span th:if="not ${@mazeController.getShowRate}">
+         <a href="/maze/rate">Show average rate</a>.<br/>
+</span>
+<span th:if="${@mazeController.getShowRate}">
+         <a href="/maze/rate">Hide average rating</a>.<br/>
+    <span th:utext = "${@mazeController.getAverageRate()}"></span><br>
+
+</span>
+<a href="/maze/new">New game</a><br>
+
+<div class="grid-container">
+    <div class="up">
+        <a class="abutton" href="/maze/up">Up</a><br>
+    </div>
+    <div class="left">
+        <a class="abutton" href="/maze/left">Left</a>
+    </div>
+    <div class="right">
+        <a class="abutton" href="/maze/right">Right</a><br>
+    </div>
+    <div class="down">
+        <a class="abutton"  href="/maze/down">Down</a><br>
+    </div>
+</div>
+
+
+Time passed - <span th:text = "${@mazeController.getSecondsPassed()}"></span><br>
+Leave comment and rate game.
+<form action="/comment" method="post">
+    Comment: <input type="text" name="comment"/><br/>
+    Rate: <input type="number" name="rate"/><br/>
+    <input type="submit"/><br/>
+</form>
+ Level passed -  <span th:text = "${@mazeController.getLevelPassed()}"></span><br>
+<span th:utext = "${@mazeController.FieldControl()}"></span>
+
+<h2>Top scores</h2>
+<table style="width: 100%" class="beta" >
+    <tr>
+        <th>Id</th>
+        <th>Player</th>
+        <th>Game</th>
+        <th>Level passed</th>
+        <th>Invisible</th>
+        <th>Easy difficulty time</th>
+        <th>Medium difficulty time</th>
+        <th>Hard difficulty time</th>
+        <th>Play time</th>
+        <th>Score</th>
+    </tr>
+    <!--/*@thymesVar id="scores" type="java.util.List<sk.tuke.gamestudio.entity.Score"*/-->
+    <tr th:each = "score, it : ${scores}">
+        <td th:text="${it.index + 1}"></td>
+        <td th:text="${score.player}"></td>
+        <td th:text="${score.game}"></td>
+        <td th:text="${score.levelPassed}"></td>
+        <td th:text="${score.invisible}"></td>
+        <td th:text="${score.easyDifficultyTime}"></td>
+        <td th:text="${score.mediumDifficultyTime}"></td>
+        <td th:text="${score.hardDifficultyTime}"></td>
+        <td th:text="${#dates.format(score.played_at, 'dd.MM.yyyy')}"></td>
+        <td th:text="${score.score}"></td>
+    </tr>
+</table>
+
+<h2>Rate and comments</h2>
+<table style="width: 100%" class="beta" >
+    <tr>
+        <th>Id</th>
+        <th>Player</th>
+        <th>Game</th>
+        <th>Rate</th>
+        <th>Comment</th>
+    </tr>
+    <!--/*@thymesVar id="ratingAndComments" type="java.util.List<sk.tuke.gamestudio.entity.RatingAndComments"*/-->
+    <tr th:each = "rating_and_comments, it : ${ratingAndComments}">
+        <td th:text="${it.index + 1}"></td>
+        <td th:text="${rating_and_comments.player}"></td>
+        <td th:text="${rating_and_comments.game}"></td>
+        <td th:text="${rating_and_comments.rate}"></td>
+        <td th:text="${rating_and_comments.comment}"></td>
+    </tr>
+</table>
+<div th:replace="fragments/fragments::footer"/>
+</body>
+</html>

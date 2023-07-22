@@ -1,0 +1,22 @@
+Pri generovani herneho pola hre Maze potrebne:
+1. Nahodne vygenerovat steny takym padom aby ne prekrivali drahu do pokladu.
+	* V rekurzivnej funkcie sa do pola (field) na nahodnom riadku a nahodnom stlpci vklada cislo - ktore bude definovat aka steny bude tam.
+	* Aby sa zabezpecilo, ze nova stena nebude vlozena na miesto, kde uz predtym bola nejaka stena vlozena, skontroluje sa, ci je nahodne vygenerovana pozicia prazdna.
+	* Aby sa zabezpecilo, ze nova stena nebude vlozena na miesto, kde bude prekrivat cestu do dlaznice, skontroluje sa, ci je nahodne vygenerovana cesta.
+	* Recurzia konci, ked herne pole nie je prazdne.
+2. Vygenerovat hraca a poklad.
+	* Do pola (field) na nahodnom riadku a nahodnom stlpci vklada hrac - instancia triedy Player.
+	* Do pola (field) na nahodnom riadku a nahodnom stlpci vklada poklad - instancia triedy Treasure.
+3. Ak hra nebola vyhrata, pokracuje sa dalsim tahom hraca.
+
+Tah hraca spociva vo vybere typu akcie:
+	* Nahodny vyber akcie hry na zaciatku.
+	* Vyberu smeru pohube sipkami.
+	* Kontrola hry pomocu klavesnice ak stav hry dovoluje taku moznost.
+	* Moznost pridat komentar a ocenit hru.
+	* Moznost zmenit viditelnost hracieho pola tak, aby sa generovalo len v blizkosti hraca.
+	* Moznost vybrat zlozitost hry.
+	* Moznost otvorit popis hry.
+        * Moznost henerovat vlastny labyrint s niektorymi vlastnostami.
+	* Moznost ziskat najvacsi score.
+

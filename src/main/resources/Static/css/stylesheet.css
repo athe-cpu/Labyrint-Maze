@@ -1,0 +1,97 @@
+body {
+    background-color: #ffffff;
+    font-size: 1rem;
+    font-family: Verdana, "Verdana CE",  Arial, "Arial CE", "Helvetica CE", sans-serif;
+    color: #000000;
+    max-width: 50rem;
+    margin: auto;
+    padding: 1em;
+}
+
+h1 {
+    font-family: Arial, "Arial CE", "Helvetica CE", sans-serif;
+    font-size:  1.6em;
+    font-weight: bold;
+    margin: 0px;
+    padding: 0px;
+    color: #045491;
+}
+
+h2 {
+    font-family: Arial, "Arial CE", "Helvetica CE", sans-serif;
+    font-size:  1.4em;
+    font-weight: bold;
+    margin: 0px;
+    padding: 0px;
+    color: #045491;
+}
+h3 {
+    font-size:  1.2em;
+}
+a:link, a:visited {
+    color: #045491;
+    font-weight : bold;
+    text-decoration: none;
+}
+
+a:link:hover, a:visited:hover  {
+    color: #045491;
+    font-weight : bold;
+    text-decoration : underline;
+}
+
+#mineTable {
+    border-collapse: collapse;
+    border: none;
+}
+span{
+    justify-content: center;
+}
+td {
+    padding: 0;
+}
+
+.beta table,
+.beta td,
+.beta th {
+    border:1px solid black;
+}
+ table.beta th {
+    font-weight: bold;
+    color: #ffffff;
+    background-color: dimgray;
+}
+table.beta tr:nth-child(even){
+    background-color: lightgray;
+}
+table.beta tr:nth-child(odd){
+    background-color: white;
+}
+div.mazeControl{
+    border: 1px solid darkgrey;
+    border-radius: 0.4em;
+    padding: 0.5em;
+    min-width: 13em;
+}
+
+div.mazeControl span.gameInfo{
+    width:13em;
+    display: inline-block;
+}
+a.abutton {
+    border: 1px solid darkslategrey;
+    display: inline-block;
+    width: 8em;
+    height: 2em;
+    margin: 0.1em;
+    padding: 0.1em;
+    border-radius: 0.2em;
+    background-color: white;
+    font-weight: normal;
+}
+
+a.abutton:hover {
+    background-color: springgreen;
+    text-decoration: none;
+    font-weight: normal;
+}

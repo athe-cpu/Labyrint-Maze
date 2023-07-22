@@ -1,0 +1,21 @@
+* maze - zakladny balik, obsahuje hlavne triedy.
+	* Maze - hlavna trieda s metodou main.
+	* Regex - trieda pre overenie spravnoho vstupu hraca.
+* maze.core - balik obsahuje triedy definujuce herne pole, nezavisle od pouzivatelskeho rozhrania.
+	* Field - trieda reprezentujuca herne pole a jeho funkcnost. Herne pole obsahuje dlazdice.
+	* Player - trieda reprezentujuca objekt typu hrac.
+	* Treasure - trieda reprezentujuca dlazdicu typu poklad.
+	* GameState - enumeracny typ vyjadrujuci stav hry.
+	* PlayerMove - enumeracny typ vyjadrujuci smer pohybu hraca.
+* maze.consoleui - balik obsahuje triedu definujuce interakciu s pouzivatelom.
+* maze.entity - balik obsahuje pomocne triedy pre robotu s databazami.
+	* RatingAndComments - trieda na pomoc s databazou do ktorej zapisujeme komentare a ocenky hracov.
+	* Score - trieda na pomoc s databazou do ktorej zapisujeme hodnotenie.
+* maze.service
+	* GamestudioException - vlasna chyba.
+	* RatingServiceJDBC - trieda so zakladnymi funkciami pre robotu s databazou RatingAndComments.
+	* ScoreService - rozhranie s funkciami ktore budu pouzivat pre databazu.
+	* ScoreServiceJDBC - trieda so zakladnymi funkciami pre robotu s databazou Score
+*maze.tests
+	* FieldTest - test na overenie funkcie herneho pola.
+	* ScoreServiceTest -  test na overenie funkcie databazy.

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Maze</title>
+<!--    <link href="https://unpkg.com/css-doodle@0.17.2/css-doodle.min.js" rel="stylesheet">-->
+    <link rel="stylesheet" href="/css/winPage.css"/>
+</head>
+
+<body>
+
+<div class="context">
+    <div th:replace ="fragments/fragments::return_to_maze"/>
+    <embed  src="/music/medieval.wav" loop="false" hidden="true" autostart="true">
+    <h1>YOU WIN!!!</h1>
+</div>
+<div class="area" >
+    <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div >
+</body>
+</html>

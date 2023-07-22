@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/diff.css"/>
+</head>
+<body>
+<nav class="navMenu">
+    <a href="/maze/easy">Easy</a>
+    <a href="/maze/medium">Medium</a>
+    <a href="/maze/hard">Hard</a>
+    <span th:if="${@mazeController.getInvisible}">
+        <a href="/maze/invisible">Invisible_On</a>
+    </span>
+    <span th:if="not ${@mazeController.getInvisible}">
+        <a href="/maze/invisible">Invisible_Off</a>
+    </span>
+    <div class="dot"></div>
+</nav>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{layout/template.html}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<span layout :fragments="content">
+    <h1>Zoznam hier:</h1>
+    <ul>
+        <l1><a href="/maze" >Maze</a></l1>
+    </ul>
+</span>
+</body>
+</html>

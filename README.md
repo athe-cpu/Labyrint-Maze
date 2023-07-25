@@ -8,7 +8,8 @@ The game uses the Spring framework and JAVA programming language as the main com
 
 ![image-WAfpFp0wx-transformed](https://github.com/athe-cpu/Labyrint-Maze/assets/83352578/751e3f40-39ba-4304-b40c-c9fa3e59f229)
 
-![image](https://github.com/athe-cpu/Labyrint-Maze/assets/83352578/84479dfd-3c60-4e3f-b6d4-8ac5ca90e2ab)
+![image-WO_PHiHas-transformed](https://github.com/athe-cpu/Labyrint-Maze/assets/83352578/69121d4e-34b7-4823-98b8-745a387843b5)
+
 
 # Link
 How game looks like:
